@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { COLORS } from './constants';
+import { COLORS, QUERIES } from './constants';
 
 export const Title = styled.h1`
   text-align: center;
@@ -8,6 +8,16 @@ export const Title = styled.h1`
   font-weight: 900;
   line-height: 36px;
   margin-bottom: 32px;
+
+  @media ${QUERIES.tabletAndUp}{
+    font-size: 3rem;
+    line-height: 48px;
+  }
+
+  @media ${QUERIES.laptopAndUp}{
+    font-size: 4rem;
+    line-height: 64px;
+  }
 `;
 
 export const Paragraph = styled.p`

@@ -6,6 +6,7 @@ import { HeaderSection, GallerySection, Footer } from './components';
 const Wrapper = styled.div`
   min-height: 100%;
   background-color: ${COLORS.neutral.white};
+  overflow: hidden;
 `;
 
 function App(): JSX.Element {

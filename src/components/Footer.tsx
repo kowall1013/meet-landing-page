@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { COLORS } from '../constants';
+import { COLORS, QUERIES } from '../constants';
 import { Title, Paragraph, Button } from '../Styled';
 import Indicator from './Indicator';
 
 const StyledFooter = styled.footer`
+  margin-top: 176px;
   position: relative;
   background-image: url(assets/mobile/image-footer.jpg);
   background-size: cover;
@@ -25,11 +26,18 @@ const Content = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+
 `;
 
 const StyledTitle = styled(Title)`
   font-size: 2rem;
   color: ${COLORS.neutral.white};
+
+  @media ${QUERIES.tabletAndUp}{
+    font-size: 2.5rem;
+  }
 `;
 
 const StyledParagraph = styled(Paragraph)`

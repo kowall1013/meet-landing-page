@@ -1,10 +1,17 @@
 import React from 'react'
 import styled from 'styled-components';
-import { COLORS } from '../constants';
+import { COLORS, QUERIES } from '../constants';
 import { Title, Paragraph } from '../Styled';
 
 const Wrapper = styled.section`
-  margin: 64px 24px;
+  padding: 64px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  @media ${QUERIES.tabletAndUp}{
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 `;
 
 const GridWrapper = styled.article`
@@ -27,6 +34,8 @@ const ContentWrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
 `;
 
 const SubTitle = styled.p`
@@ -36,10 +45,15 @@ const SubTitle = styled.p`
   color: ${COLORS.primary.green};
   letter-spacing: 4px;
   margin-bottom: 24px;
+  text-align: center;
 `;
 
 const StyledTitle = styled(Title)`
   font-size: 2rem;
+
+  @media ${QUERIES.tabletAndUp}{
+    font-size: 2.5rem;
+  }
 `;
 
 function GallerySection() {
