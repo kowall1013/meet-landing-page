@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { COLORS, QUERIES } from '../constants';
-import { Title, Paragraph, Button } from '../Styled';
+import { Title, Paragraph, DownloadButton } from '../Styled';
 import Indicator from './Indicator';
 
 const StyledFooter = styled.footer`
@@ -19,6 +19,14 @@ const StyledFooter = styled.footer`
     background-color: ${COLORS.primary.green};
     opacity: 0.8;
   }
+
+  @media ${QUERIES.tabletAndUp} {
+    background-image: url(assets/tablet/image-footer.jpg);
+  }
+
+  @media ${QUERIES.laptopAndUp} {
+    background-image: url(assets/desktop/image-footer.jpg);
+  }
 `;
 
 const Content = styled.article`
@@ -29,6 +37,12 @@ const Content = styled.article`
   max-width: 500px;
   margin: 0 auto;
 
+  @media ${QUERIES.laptopAndUp} {
+    display: grid;
+    max-width: 1100px;
+    grid-template-columns: 350px 1fr 200px;
+    gap: 80px;
+  }
 `;
 
 const StyledTitle = styled(Title)`
@@ -38,19 +52,18 @@ const StyledTitle = styled(Title)`
   @media ${QUERIES.tabletAndUp}{
     font-size: 2.5rem;
   }
+
+  @media ${QUERIES.laptopAndUp} {
+    text-align: left;
+  }
 `;
 
 const StyledParagraph = styled(Paragraph)`
   font-size: 1.125rem;
   color: ${COLORS.neutral.white};
-`;
 
-const DownloadButton = styled(Button)`
-  background-color: ${COLORS.primary.violet};
-
-  span {
-    color: ${COLORS.neutral.lightViolet};
-    margin-left: 4px;
+  @media ${QUERIES.laptopAndUp} {
+    text-align: left;
   }
 `;
 

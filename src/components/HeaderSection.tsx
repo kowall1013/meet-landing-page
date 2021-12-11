@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { COLORS, QUERIES } from '../constants';
-import { Title, Paragraph, Button } from '../Styled';
+import { QUERIES } from '../constants';
+import { Title, Paragraph, DownloadButton, QuestionButton } from '../Styled';
 import Indicator from "./Indicator";
 
 const TabletAndDownHeader = styled.div`
@@ -8,6 +8,14 @@ const TabletAndDownHeader = styled.div`
 
   @media ${QUERIES.laptopAndUp}{
     display: none;
+  }
+`
+
+const DesktopHeaderWrapper = styled.div`
+  display: none;
+
+  @media ${QUERIES.laptopAndUp}{
+    display: revert;
   }
 `
 
@@ -62,29 +70,6 @@ const ActionBtnWrapper = styled.div`
     flex-direction: row;
   }
 `;
-
-const DownloadButton = styled(Button)`
-  background-color: ${COLORS.primary.green};
-
-  span {
-    color: ${COLORS.neutral.lightGreen};
-    margin-left: 4px;
-  }
-`;
-
-const QuestionButton = styled(Button)`
-  background-color: ${COLORS.primary.violet};
-  padding-left: 29px;
-  padding-right: 29px;
-`;
-
-const DesktopHeaderWrapper = styled.div`
-  display: block;
-
-  @media ${QUERIES.laptopAndUp}{
-    display: revert;
-  }
-`
 
 const DesktopHeader = styled.header`
   display: grid;
@@ -154,7 +139,7 @@ function HeaderSection(): JSX.Element {
             <Title>Group Chat for Everyone</Title>
             <StyledParagraph>Meet makes it easy to connect with others face-to-face virtually and collaborate across any device.</StyledParagraph>
             <ActionBtnWrapper>
-              <DownloadButton>Download <span>v1.3</span></DownloadButton>
+              <DownloadButton primary>Download <span>v1.3</span></DownloadButton>
               <QuestionButton>What is it?</QuestionButton>
             </ActionBtnWrapper>
           </Main>
